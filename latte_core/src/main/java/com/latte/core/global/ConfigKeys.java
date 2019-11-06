@@ -1,7 +1,7 @@
-package com.caotong.latte.core.global;
+package com.latte.core.global;
 
 public enum ConfigKeys {
     CONFIG_READY,
     APPLICATION_CONTEXT,
-    WEB_HOST
+    API_HOST
 }

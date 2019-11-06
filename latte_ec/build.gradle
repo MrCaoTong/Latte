@@ -33,4 +33,7 @@ dependencies {
 
     implementation project(':latte_annotations')
     annotationProcessor project(':latte_compiler')
+    api project(':latte_core')
+
+
 }

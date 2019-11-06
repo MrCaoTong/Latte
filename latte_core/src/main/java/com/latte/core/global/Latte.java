@@ -1,4 +1,4 @@
-package com.caotong.latte.core.global;
+package com.latte.core.global;
 
 import android.app.Application;
 import android.content.Context;
