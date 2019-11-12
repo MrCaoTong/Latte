@@ -12,7 +12,7 @@ public class MyApplication extends Application {
         super.onCreate();
         Latte.init(getApplicationContext())
                 .withIcon(new FontAwesomeModule())
-                .withApiHost("http://127.0.0.1/")
+                .withApiHost("https://www.iqiyi.com/")
                 .configure();
     }
 }
