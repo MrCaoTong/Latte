@@ -12,7 +12,7 @@ import okhttp3.RequestBody;
 public class RestClientBuilder {
 
     private String mUrl;
-    private WeakHashMap<String, Object> PARAMS = new WeakHashMap<>();
+    private final WeakHashMap<String, Object> PARAMS = RestCreator.getParams();
     private IRequest mRequest;
     private ISuccess mSuccess;
     private IError mError;

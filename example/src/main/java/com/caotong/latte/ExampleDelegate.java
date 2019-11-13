@@ -2,6 +2,7 @@ package com.caotong.latte;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
@@ -27,11 +28,11 @@ public class ExampleDelegate extends LatteDelegate {
     public void testBuilder() {
         RestClient
                 .builder()
-                .url("https://www.iqiyi.com/")
+                .url("https://www.baidu.com/")
                 .request(new IRequest() {
                     @Override
                     public void onRequestStart() {
-
+                        Log.i("request:", " start ");
                     }
 
                     @Override
@@ -42,23 +43,22 @@ public class ExampleDelegate extends LatteDelegate {
                 .success(new ISuccess() {
                     @Override
                     public void onSuccess(String response) {
-                        Toast.makeText(Latte.getApplicationContext(),response,Toast.LENGTH_LONG).show();
+                        Toast.makeText(getContext(), response, Toast.LENGTH_LONG).show();
                     }
                 })
                 .error(new IError() {
                     @Override
                     public void onError(int code, String msg) {
-
+                        Log.i("error:", msg + " ");
                     }
                 })
                 .failure(new IFailure() {
                     @Override
                     public void onFailure() {
-
+                        Log.i("failure:", "");
                     }
                 })
                 .build()
                 .get();
-
     }
 }

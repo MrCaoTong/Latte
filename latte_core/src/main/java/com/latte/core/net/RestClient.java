@@ -52,16 +52,16 @@ public final class RestClient {
 
         switch (method) {
             case GET:
-                restService.get(URL, PARAMS);
+                call = restService.get(URL, PARAMS);
                 break;
             case PUT:
-                restService.put(URL, PARAMS);
+                call = restService.put(URL, PARAMS);
                 break;
             case POST:
-                restService.post(URL, PARAMS);
+                call = restService.post(URL, PARAMS);
                 break;
             case DELETE:
-                restService.delete(URL, PARAMS);
+                call = restService.delete(URL, PARAMS);
                 break;
             default:
                 break;
@@ -75,18 +75,19 @@ public final class RestClient {
         return new RequestCallbacks(REQUEST, SUCCESS, ERROR, FAILURE);
     }
 
-    public final void get(){
+    public final void get() {
         request(HttpMethod.GET);
     }
 
-    public final void post(){
+    public final void post() {
         request(HttpMethod.POST);
     }
 
-    public final void put(){
+    public final void put() {
         request(HttpMethod.PUT);
     }
-    public final void delete(){
+
+    public final void delete() {
         request(HttpMethod.DELETE);
     }
 }
