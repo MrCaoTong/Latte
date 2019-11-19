@@ -3,6 +3,9 @@ package com.latte.core.net;
 public enum HttpMethod {
     GET,
     PUT,
+    PUT_RAW,
     POST,
-    DELETE
+    POST_RAW,
+    DELETE,
+    UPDATE
 }

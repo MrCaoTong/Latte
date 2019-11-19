@@ -13,6 +13,7 @@ import com.latte.core.net.callback.IError;
 import com.latte.core.net.callback.IFailure;
 import com.latte.core.net.callback.IRequest;
 import com.latte.core.net.callback.ISuccess;
+import com.latte.core.ui.loader.LoaderStyle;
 
 public class ExampleDelegate extends LatteDelegate {
     @Override
@@ -29,6 +30,7 @@ public class ExampleDelegate extends LatteDelegate {
         RestClient
                 .builder()
                 .url("https://www.baidu.com/")
+                .loader(getContext(), LoaderStyle.BallBeatIndicator)
                 .request(new IRequest() {
                     @Override
                     public void onRequestStart() {
@@ -43,7 +45,7 @@ public class ExampleDelegate extends LatteDelegate {
                 .success(new ISuccess() {
                     @Override
                     public void onSuccess(String response) {
-                        Toast.makeText(getContext(), response, Toast.LENGTH_LONG).show();
+//                        Toast.makeText(getContext(), response, Toast.LENGTH_LONG).show();
                     }
                 })
                 .error(new IError() {
